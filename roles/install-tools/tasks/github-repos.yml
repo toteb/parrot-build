@@ -47,9 +47,9 @@
     - { repo: "dirkjanm/mitm6",  regex: "mitm6-0.3.0.zip", location: "/opt/mitm6/" }
     - { repo: "sensepost/gowitness",  regex: "gowitness-2.5.1-linux-amd64", location: "/opt/recon/gowitness/" }
     - { repo: "BloodHoundAD/BloodHound", regex: "BloodHound-linux-x64.zip", location: "/opt/bloodhound/" }
-    - { repo: "owasp-amass/amass", regex: "amass_Linux_amd64.zip, location: "/opt/amass/" }
-    - { repo: "BloodHoundAD/AzureHound", regex: "azurehound-linux-amd64.zip, location: "/opt/cloud/azure/azurehound/" }
-    - { repo: "blechschmidt/massdns", regex: "massdns-1.1.0.zip, location: "/opt/massdns/" }
+    - { repo: "owasp-amass/amass", regex: "amass_Linux_amd64.zip", location: "/opt/amass/" }
+    - { repo: "BloodHoundAD/AzureHound", regex: "azurehound-linux-amd64.zip", location: "/opt/cloud/azure/azurehound/" }
+    - { repo: "blechschmidt/massdns", regex: "massdns-1.1.0.zip", location: "/opt/massdns/" }
 
   async: 45
   poll: 0
