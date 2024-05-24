@@ -1,6 +1,6 @@
 ---
 - name: Install PowerShell 7.4
-  hosts: your_hosts
+  hosts: localhost
   become: true
   become_method: sudo
   tasks:
