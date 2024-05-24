@@ -12,32 +12,32 @@
     - { repo: "https://github.com/dafthack/MFASweep", location: "/opt/cloud/azure/mfaSweep" }
     - { repo: "https://github.com/NetSPI/MicroBurst", location: "/opt/cloud/azure/microBurst" }
     - { repo: "https://github.com/dafthack/MSOLSpray", location: "/opt/cloud/azure/msolSpray" }
-    - { repo: "https://github.com/hausec/PowerZure", location: "/opt/cloud/azure/PowerZure" }
-    - { repo: "https://github.com/dirkjanm/ROADtools", location: "/opt/cloud/azure/ROADtools" }
-    - { repo: "https://github.com/nccgroup/ScoutSuite", location: "/opt/cloud/azure/ScoutSuite" }
-    - { repo: "https://github.com/Octoberfest7/TeamsPhisher", location: "/opt/cloud/azure/TeamsPhisher" }
-    - { repo: "https://github.com/glavstroy/DorkFinder", location: "/opt/recon/DorkFinder" }
-    - { repo: "https://github.com/dirkjanm/adconnectdump", location: "/opt/internal/adconnectdump" }
-    - { repo: "https://github.com/dirkjanm/adidnsdump", location: "/opt/internal/adidnsdump" }
-    - { repo: "https://github.com/adrecon/ADRecon", location: "/opt/internal/adRecon" }
-    - { repo: "https://github.com/adrecon/AzureADRecon", location: "/opt/internal/azureADRecon" }
-    - { repo: "https://github.com/NotMedic/NetNTLMtoSilverTicket/", location: "/opt/internal/dementor" }
-    - { repo: "https://github.com/Wh04m1001/DFSCoerce", location: "/opt/internal/dfsCoerce" }
-    - { repo: "https://github.com/GhostPack/ForgeCert/", location: "/opt/internal/forgeCert" }
-    - { repo: "https://github.com/dirkjanm/ldapdomaindump", location: "/opt/internal/ldapdomaindump" }
-    - { repo: "https://github.com/topotam/PetitPotam", location: "/opt/internal/petitPotam" }
-    - { repo: "https://github.com/AlmondOffSec/PassTheCert", location: "/opt/internal/passTheCert" }
-    - { repo: "https://github.com/peass-ng/PEASS-ng", location: "/opt/internal/PEASS-ng" }
-    - { repo: "https://github.com/dirkjanm/PKINITtools", location: "/opt/internal/PKINITtools" }
-    - { repo: "https://github.com/Kevin-Robertson/Powermad", location: "/opt/internal/Powermad" }
-    - { repo: "https://github.com/NetSPI/PowerUpSQL", location: "/opt/internal/PowerUpSQL" }
-    - { repo: "https://github.com/S3cur3Th1sSh1t/PowerSharpPack", location: "/opt/internal/PowerSharpPack" }
-    - { repo: "https://github.com/PowerShellMafia/PowerSploit/", location: "/opt/internal/PowerSploit" }
-    - { repo: "https://github.com/safebuffer/sam-the-admin", location: "/opt/internal/sam-the-admin" }
-    - { repo: "https://github.com/Flangvik/SharpCollection", location: "/opt/internal/SharpCollection" }
-    - { repo: "https://github.com/Hackndo/WebclientServiceScanner", location: "/opt/internal/webclientServiceScanner" }
-    - { repo: "https://github.com/eladshamir/Whisker", location: "/opt/internal/Whisker" }
-    - { repo: "https://github.com/justakazh/sicat", location: "/opt/internal/sicat" }
+    #- { repo: "https://github.com/hausec/PowerZure", location: "/opt/cloud/azure/PowerZure" }
+    #- { repo: "https://github.com/dirkjanm/ROADtools", location: "/opt/cloud/azure/ROADtools" }
+    #- { repo: "https://github.com/nccgroup/ScoutSuite", location: "/opt/cloud/azure/ScoutSuite" }
+    #- { repo: "https://github.com/Octoberfest7/TeamsPhisher", location: "/opt/cloud/azure/TeamsPhisher" }
+    #- { repo: "https://github.com/glavstroy/DorkFinder", location: "/opt/recon/DorkFinder" }
+    #- { repo: "https://github.com/dirkjanm/adconnectdump", location: "/opt/internal/adconnectdump" }
+    #- { repo: "https://github.com/dirkjanm/adidnsdump", location: "/opt/internal/adidnsdump" }
+    #- { repo: "https://github.com/adrecon/ADRecon", location: "/opt/internal/adRecon" }
+    #- { repo: "https://github.com/adrecon/AzureADRecon", location: "/opt/internal/azureADRecon" }
+    #- { repo: "https://github.com/NotMedic/NetNTLMtoSilverTicket/", location: "/opt/internal/dementor" }
+    #- { repo: "https://github.com/Wh04m1001/DFSCoerce", location: "/opt/internal/dfsCoerce" }
+    #- { repo: "https://github.com/GhostPack/ForgeCert/", location: "/opt/internal/forgeCert" }
+    #- { repo: "https://github.com/dirkjanm/ldapdomaindump", location: "/opt/internal/ldapdomaindump" }
+    #- { repo: "https://github.com/topotam/PetitPotam", location: "/opt/internal/petitPotam" }
+    #- { repo: "https://github.com/AlmondOffSec/PassTheCert", location: "/opt/internal/passTheCert" }
+    #- { repo: "https://github.com/peass-ng/PEASS-ng", location: "/opt/internal/PEASS-ng" }
+    #- { repo: "https://github.com/dirkjanm/PKINITtools", location: "/opt/internal/PKINITtools" }
+    #- { repo: "https://github.com/Kevin-Robertson/Powermad", location: "/opt/internal/Powermad" }
+    #- { repo: "https://github.com/NetSPI/PowerUpSQL", location: "/opt/internal/PowerUpSQL" }
+    #- { repo: "https://github.com/S3cur3Th1sSh1t/PowerSharpPack", location: "/opt/internal/PowerSharpPack" }
+    #- { repo: "https://github.com/PowerShellMafia/PowerSploit/", location: "/opt/internal/PowerSploit" }
+    #- { repo: "https://github.com/safebuffer/sam-the-admin", location: "/opt/internal/sam-the-admin" }
+    #- { repo: "https://github.com/Flangvik/SharpCollection", location: "/opt/internal/SharpCollection" }
+    #- { repo: "https://github.com/Hackndo/WebclientServiceScanner", location: "/opt/internal/webclientServiceScanner" }
+    #- { repo: "https://github.com/eladshamir/Whisker", location: "/opt/internal/Whisker" }
+    #- { repo: "https://github.com/justakazh/sicat", location: "/opt/internal/sicat" }
   become: true
   become_method: sudo
 
@@ -66,14 +66,14 @@
     - { repo: "WithSecureLabs/chainsaw",  regex: "chainsaw_all_", location: "/opt" }
     - { repo: "initstring/cloud_enum",  regex: "cloud_enum-0.7.zip", location: "/opt/cloud/cloud_enum" }
     - { repo: "dirkjanm/mitm6",  regex: "mitm6-0.3.0.zip", location: "/opt/mitm6" }
-    - { repo: "sensepost/gowitness",  regex: "gowitness-2.5.1-linux-amd64", location: "/opt/recon/gowitness" }
-    - { repo: "BloodHoundAD/BloodHound", regex: "BloodHound-linux-x64.zip", location: "/opt/bloodhound" }
-    - { repo: "owasp-amass/amass", regex: "amass_Linux_amd64.zip", location: "/opt" }
-    - { repo: "BloodHoundAD/AzureHound", regex: "azurehound-linux-amd64.zip", location: "/opt/cloud/azure/azurehound" }
-    - { repo: "blechschmidt/massdns", regex: "massdns-1.1.0.zip", location: "/opt/massdns" }
-    - { repo: "Pennyw0rth/NetExec", regex: "nxc", location: "/opt" }
-    - { repo: "epi052/feroxbuster", regex: "x86_64-linux-feroxbuster.zip", location: "/opt/web/ferroxbuster" }
-    - { repo: "jtesta/ssh-audit", regex: "ssh-audit-3.2.0.tar.gz", location: "/opt/web/ssh-audit" }
+    #- { repo: "sensepost/gowitness",  regex: "gowitness-2.5.1-linux-amd64", location: "/opt/recon/gowitness" }
+    #- { repo: "BloodHoundAD/BloodHound", regex: "BloodHound-linux-x64.zip", location: "/opt/bloodhound" }
+    #- { repo: "owasp-amass/amass", regex: "amass_Linux_amd64.zip", location: "/opt" }
+    #- { repo: "BloodHoundAD/AzureHound", regex: "azurehound-linux-amd64.zip", location: "/opt/cloud/azure/azurehound" }
+    #- { repo: "blechschmidt/massdns", regex: "massdns-1.1.0.zip", location: "/opt/massdns" }
+    #- { repo: "Pennyw0rth/NetExec", regex: "nxc", location: "/opt" }
+    #- { repo: "epi052/feroxbuster", regex: "x86_64-linux-feroxbuster.zip", location: "/opt/web/ferroxbuster" }
+    #- { repo: "jtesta/ssh-audit", regex: "ssh-audit-3.2.0.tar.gz", location: "/opt/web/ssh-audit" }
 
   async: 45
   poll: 0

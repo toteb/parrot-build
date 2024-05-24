@@ -17,8 +17,8 @@
       - ntpdate
       - flameshot
       - exiftool
-      - open-iscsi
-      - snmp-mibs-downloader
+      #- open-iscsi
+      #- snmp-mibs-downloader
     state: latest
   become: true
   become_method: sudo
