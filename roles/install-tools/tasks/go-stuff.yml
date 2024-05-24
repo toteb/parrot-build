@@ -5,4 +5,8 @@
   shell: go install github.com/tomnomnom/httprobe@latest
 - name: "install assetfinder"
   shell: go install github.com/tomnomnom/assetfinder@latest
+- name: "install pdtm"
+  shell: go install github.com/projectdiscovery/pdtm/cmd/pdtm@latest
+- name: "install Dalfox"
+  shell: go install github.com/hahwul/dalfox/v2@latest
 

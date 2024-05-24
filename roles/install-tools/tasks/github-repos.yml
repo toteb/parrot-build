@@ -4,8 +4,9 @@
     repo: "{{ item.repo }}"
     dest: "{{ item.location }}"
   loop:
-    - { repo: "https://github.com/Flangvik/SharpCollection", location: "/opt/SharpCollection" }
+    # SecLists
     - { repo: "https://github.com/danielmiessler/SecLists", location: "/opt/SecLists" }
+    # cloud tools
     - { repo: "https://github.com/dafthack/CloudPentestCheatsheets", location: "/opt/cloud/cloudPentestCheatsheets" }
     - { repo: "https://github.com/ustayready/fireprox", location: "/opt/cloud/fireprox" }
     - { repo: "https://github.com/dafthack/GraphRunner", location: "/opt/cloud/azure/graphRunner" }
@@ -16,8 +17,10 @@
     - { repo: "https://github.com/dirkjanm/ROADtools", location: "/opt/cloud/azure/ROADtools" }
     - { repo: "https://github.com/nccgroup/ScoutSuite", location: "/opt/cloud/azure/ScoutSuite" }
     - { repo: "https://github.com/Octoberfest7/TeamsPhisher", location: "/opt/cloud/azure/TeamsPhisher" }
+    # recon tools
     - { repo: "https://github.com/glavstroy/DorkFinder", location: "/opt/recon/DorkFinder" }
     - { repo: "https://github.com/dirkjanm/adconnectdump", location: "/opt/internal/adconnectdump" }
+    # internal tools
     - { repo: "https://github.com/dirkjanm/adidnsdump", location: "/opt/internal/adidnsdump" }
     - { repo: "https://github.com/adrecon/ADRecon", location: "/opt/internal/adRecon" }
     - { repo: "https://github.com/adrecon/AzureADRecon", location: "/opt/internal/azureADRecon" }
@@ -38,6 +41,12 @@
     - { repo: "https://github.com/Hackndo/WebclientServiceScanner", location: "/opt/internal/webclientServiceScanner" }
     - { repo: "https://github.com/eladshamir/Whisker", location: "/opt/internal/Whisker" }
     - { repo: "https://github.com/justakazh/sicat", location: "/opt/internal/sicat" }
+    # web tools
+    - { repo: "https://github.com/iamj0ker/bypass-403", location: "/opt/web/bypass-403" }
+    - { repo: "https://github.com/joaomatosf/jexboss", location: "/opt/web/jexboss" }
+    - { repo: "https://github.com/projectdiscovery/nuclei-templates", location: "/opt/web/nuclei-templates" }
+    - { repo: "https://github.com/EnableSecurity/wafw00f", location: "/opt/web/wafw00f" }
+    - { repo: "https://github.com/s0md3v/XSStrike", location: "/opt/web/xsStrike" }
   become: true
   become_method: sudo
 
@@ -74,6 +83,8 @@
     - { repo: "Pennyw0rth/NetExec", regex: "nxc", location: "/opt" }
     - { repo: "epi052/feroxbuster", regex: "x86_64-linux-feroxbuster.zip", location: "/opt/web/ferroxbuster" }
     - { repo: "jtesta/ssh-audit", regex: "ssh-audit-3.2.0.tar.gz", location: "/opt/web/ssh-audit" }
+    - { repo: "dub-flow/sessionprobe", regex: "sessionprobe-linux-amd64", location: "/opt/web/sessionProbe/" }
+    - { repo: "Sh1Yo/x8", regex: "x86_64-linux-x8.gz", location: "/opt/web/x8/" }
 
   async: 45
   poll: 0
