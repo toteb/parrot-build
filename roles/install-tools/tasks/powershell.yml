@@ -1,5 +1,5 @@
 ---
-- name: Install PowerShell on Ubuntu
+- name: Install PowerShell on Debian-based systems
   hosts: all
   become: true
   become_method: sudo
