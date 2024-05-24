@@ -1,0 +1,8 @@
+---
+- name: "install Kerbrute"
+  shell: go install github.com/ropnop/kerbrute@master
+- name: "install httprobe"
+  shell: go install github.com/tomnomnom/httprobe@latest
+- name: "install assetfinder"
+  shell: go install github.com/tomnomnom/assetfinder@latest
+

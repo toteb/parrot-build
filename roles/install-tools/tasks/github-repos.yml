@@ -6,6 +6,17 @@
   loop:
     - { repo: "https://github.com/Flangvik/SharpCollection", location: "/opt/SharpCollection" }
     - { repo: "https://github.com/danielmiessler/SecLists", location: "/opt/SecLists" }
+    - { repo: "https://github.com/dafthack/CloudPentestCheatsheets", location: "/opt/cloud/CloudPentestCheatsheets" }
+    - { repo: "https://github.com/ustayready/fireprox", location: "/opt/cloud/CloudPentestCheatsheets" }
+    - { repo: "https://github.com/dafthack/GraphRunner", location: "/opt/cloud/azure" }
+    - { repo: "https://github.com/dafthack/MFASweep", location: "/opt/cloud/azure" }
+    - { repo: "https://github.com/NetSPI/MicroBurst", location: "/opt/cloud/azure/MicroBurst" }
+    - { repo: "https://github.com/dafthack/MSOLSpray", location: "/opt/cloud/azure/MSOLSpray" }
+    - { repo: "https://github.com/hausec/PowerZure", location: "/opt/cloud/azure/PowerZure" }
+    - { repo: "https://github.com/dirkjanm/ROADtools", location: "/opt/cloud/azure/ROADtools" }
+    - { repo: "https://github.com/nccgroup/ScoutSuite", location: "/opt/cloud/azure/ScoutSuite" }
+    - { repo: "https://github.com/Octoberfest7/TeamsPhisher", location: "/opt/cloud/azure/TeamsPhisher" }
+    - { repo: "https://github.com/glavstroy/DorkFinder", location: "/opt/recon/DorkFinder" }
   become: true
   become_method: sudo
 
@@ -33,7 +44,20 @@
     - { repo: "carlospolop/PEASS-ng",  regex: "linpeas.sh", location: "/opt/peas" }
     - { repo: "carlospolop/PEASS-ng",  regex: "winPEASx64.exe", location: "/opt/peas" }
     - { repo: "WithSecureLabs/chainsaw",  regex: "chainsaw_all_", location: "/opt/" }
+##
+    - { repo: "initstring/cloud_enum",  regex: "cloud_enum-0.7.zip", location: "/opt/cloud/" }
+    - { repo: "dirkjanm/mitm6",  regex: "mitm6-0.3.0.zip", location: "/opt/" }
+    - { repo: "WithSecureLabs/chainsaw",  regex: "chainsaw_all_", location: "/opt/" }
+    - { repo: "WithSecureLabs/chainsaw",  regex: "chainsaw_all_", location: "/opt/" }
+    - { repo: "WithSecureLabs/chainsaw",  regex: "chainsaw_all_", location: "/opt/" }
+    - { repo: "WithSecureLabs/chainsaw",  regex: "chainsaw_all_", location: "/opt/" }
+##
     - { repo: "BloodHoundAD/BloodHound", regex: "BloodHound-linux-x64.zip", location: "/opt/" }
+    - { repo: "Pennyw0rth/NetExec", regex: "nxc, location: "/opt/" }
+    - { repo: "owasp-amass/amass", regex: "amass_Linux_amd64.zip, location: "/opt/" }
+    - { repo: "BloodHoundAD/AzureHound", regex: "azurehound-linux-amd64.zip, location: "/opt/cloud/azure/" }
+
+
   async: 45
   poll: 0
   become: true
