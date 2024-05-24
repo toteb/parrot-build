@@ -17,7 +17,6 @@
     - { repo: "https://github.com/nccgroup/ScoutSuite", location: "/opt/cloud/azure/ScoutSuite" }
     - { repo: "https://github.com/Octoberfest7/TeamsPhisher", location: "/opt/cloud/azure/TeamsPhisher" }
     - { repo: "https://github.com/glavstroy/DorkFinder", location: "/opt/recon/DorkFinder" }
-
     - { repo: "https://github.com/dirkjanm/adconnectdump", location: "/opt/internal/adconnectdump" }
     - { repo: "https://github.com/dirkjanm/adidnsdump", location: "/opt/internal/adidnsdump" }
     - { repo: "https://github.com/adrecon/ADRecon", location: "/opt/internal/adRecon" }
