@@ -1,5 +1,5 @@
 ---
-- name: Python EXTERNALLY-MANAGED
+- name: Rename Python stuff
   hosts: localhost
   tasks:
     - name: Rename EXTERNALLY-MANAGED to EXTERNALLY-MANAGED.bak
