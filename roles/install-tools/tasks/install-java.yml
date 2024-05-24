@@ -37,8 +37,12 @@
     state: present
   become: true
   become_method: sudo
+  notify: Reload shell environment
 
-- name: Reload java environment
+- name: Reload shell environment
   shell: source /etc/environment
   become: true
   become_method: sudo
+  async: 1
+  poll: 0
+  ignore_errors: yes
