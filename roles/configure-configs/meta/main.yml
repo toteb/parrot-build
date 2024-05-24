@@ -51,7 +51,6 @@ dependencies:
   - role: configure-logging
   - role: configure-system
   - role: configure-tmux
-  - role: customize-browser
   - role: customize-terminal
   - role: install-tools
   # List your role dependencies here, one per line. Be sure to remove the '[]' above,

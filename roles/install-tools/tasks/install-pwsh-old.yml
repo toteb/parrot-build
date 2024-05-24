@@ -1,0 +1,20 @@
+---
+- name: "Copying python script to install pwsh"
+  copy:
+    src: "files/installpwsh.sh"
+    dest: "/tmp/installpwsh.sh"
+    owner: root
+    group: root
+    mode: 0755
+  become: true
+  become_method: sudo
+
+- name: "Install PowerShell 7.4"
+  shell: "/tmp/installpwsh.sh"
+  become: true
+  become_method: sudo
+
+- name: "Install PowerShell 7.4"
+  shell: "rm /tmp/installpwsh.sh"
+  become: true
+  become_method: sudo

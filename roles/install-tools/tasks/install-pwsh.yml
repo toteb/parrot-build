@@ -1,20 +1,27 @@
 ---
-- name: "Copying python script to install pwsh"
-  copy:
-    src: "files/installpwsh.sh"
-    dest: "/tmp/installpwsh.sh"
+- name: Downloading Powershell
+  get_url:
+    url: https://github.com/PowerShell/PowerShell/releases/download/v7.4.2/powershell_7.4.2-1.deb_amd64.deb
+    dest: /tmp/powershell_7.4.2-1.deb_amd64.deb
     owner: root
     group: root
     mode: 0755
   become: true
   become_method: sudo
 
-- name: "Install PowerShell 7.4"
-  shell: "/tmp/installpwsh.sh"
+- name: Install PowerShell 7.4
+  apt: 
+    deb: /tmp/powershell_7.4.2-1.deb_amd64.deb
   become: true
   become_method: sudo
 
+- name: Resolve missing dependencies and finish
+  apt:
+    update_cache: yes
+    name: -f
+    state: present
+
 - name: "Install PowerShell 7.4"
-  shell: "rm /tmp/installpwsh.sh"
+  shell: "rm /tmp/powershell_7.4.2-1.deb_amd64.deb"
   become: true
   become_method: sudo
