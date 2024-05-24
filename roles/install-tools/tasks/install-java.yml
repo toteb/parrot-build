@@ -22,6 +22,7 @@
 
 - name: Setting java environment
   shell: "readlink -f /usr/bin/java"
+  register: java_path_result
   become: true
   become_method: sudo
 
