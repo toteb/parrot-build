@@ -1,9 +1,15 @@
 ---
-- name: Install PowerShell 7.4
+- name: "Copying python script to install pwsh"
+  copy:
+    src: "files/installpwsh.py"
+    dest: "{{ build_dir.path }}/installpwsh.sh"
+    owner: root
+    group: root
+    mode: 0755
   become: true
   become_method: sudo
-  tasks:
-    - name: Run PowerShell Deployment
-      script: powershell.sh
-      args:
-        executable: pwsh
+
+- name: "Install PowerShell 7.4"
+  shell: "{{ build_dir.path }}/installpwsh.sh }}"
+  become: true
+  become_method: sudo
