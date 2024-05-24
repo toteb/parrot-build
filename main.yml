@@ -1,5 +1,5 @@
 ---
-- name: "Customizing Parrot"
+- name: "UNS - Customizing ParrotOS"
   hosts: localhost
   connection: local
   roles:
@@ -18,4 +18,3 @@
             - DEVSENSE.phptools-vscode
             - GitHub.copilot
             - snyk-security.snyk-vulnerability-scanner
-

@@ -1,0 +1,40 @@
+---
+- name: Install PowerShell on Ubuntu
+  hosts: all
+  become: true
+  become_method: sudo
+  tasks:
+    - name: Update the list of packages
+      apt:
+        update_cache: yes
+
+    - name: Install pre-requisite packages
+      apt:
+        name: wget
+        state: present
+
+    - name: Download the PowerShell package file
+      get_url:
+        url: https://github.com/PowerShell/PowerShell/releases/download/v7.4.2/powershell_7.4.2-1.deb_amd64.deb
+        dest: /tmp/powershell_7.4.2-1.deb_amd64.deb
+
+    - name: Install the PowerShell package
+      apt:
+        deb: /tmp/powershell_7.4.2-1.deb_amd64.deb
+
+    - name: Resolve missing dependencies and finish the install
+      apt:
+        update_cache: yes
+        name: -f
+        state: present
+
+    - name: Delete the downloaded package file
+      file:
+        path: /tmp/powershell_7.4.2-1.deb_amd64.deb
+        state: absent
+
+    - name: Start PowerShell
+      command: echo "Powershell works" > /tmp/pwsh.log
+      async: 10
+      poll: 0
+      ignore_errors: true
