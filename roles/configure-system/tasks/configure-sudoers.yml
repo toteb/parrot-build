@@ -1,21 +1,12 @@
 ---
-- name: Configure sudoers and rename file
-  hosts: localhost
+- name: Add NOPASSWD rule for the current user
   become: true
-  tasks:
-    - name: Add NOPASSWD rule for the current user
-      lineinfile:
-        dest: /etc/sudoers
-        insertbefore: EOF
-        regexp: "{{ ansible_user_id }} ALL="
-        line: "{{ item }}"
-        validate: visudo -cf %s
-      when: ansible_user_id != 'root'
-      with_items:
-        - "{{ ansible_user_id }}\tALL=(ALL) NOPASSWD:ALL"
-
-    - name: Rename EXTERNALLY-MANAGED to EXTERNALLY-MANAGED.bak
-      command: mv /usr/lib/python3.11/EXTERNALLY-MANAGED /usr/lib/python3.11/EXTERNALLY-MANAGED.bak
-      args:
-        removes: /usr/lib/python3.11/EXTERNALLY-MANAGED
-        creates: /usr/lib/python3.11/EXTERNALLY-MANAGED.bak
+  lineinfile:
+    dest: /etc/sudoers
+    insertbefore: EOF
+    regexp: "{{ ansible_user_id }} ALL="
+    line: "{{ item }}"
+    validate: visudo -cf %s
+  when: ansible_user_id != 'root'
+  with_items:
+    - "{{ ansible_user_id }}\tALL=(ALL) NOPASSWD:ALL"
