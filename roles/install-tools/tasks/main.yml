@@ -1,6 +1,6 @@
 ---
 - include: apt-stuff.yml
-- include: gofiles.yml
+- include: go-stuff.yml
 - include: github-repos.yml
 - include: python-tools.yml
 - include: gem-tools.yml

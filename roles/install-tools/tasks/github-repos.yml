@@ -40,22 +40,17 @@
   loop:
     - { repo: "jpillora/chisel",  regex: "_linux_amd64.gz", location: "/opt/chisel" }
     - { repo: "jpillora/chisel",  regex: "_windows_amd64.gz", location: "/opt/chisel" }
-    #- { repo: "jpillora/chisel",  regex: "_darwin_amd64", location: "/opt/chisel", filename: "chisel_osx" }
     - { repo: "carlospolop/PEASS-ng",  regex: "linpeas.sh", location: "/opt/peas" }
     - { repo: "carlospolop/PEASS-ng",  regex: "winPEASx64.exe", location: "/opt/peas" }
     - { repo: "WithSecureLabs/chainsaw",  regex: "chainsaw_all_", location: "/opt/" }
-##
-    - { repo: "initstring/cloud_enum",  regex: "cloud_enum-0.7.zip", location: "/opt/cloud/" }
-    - { repo: "dirkjanm/mitm6",  regex: "mitm6-0.3.0.zip", location: "/opt/" }
-    - { repo: "WithSecureLabs/chainsaw",  regex: "chainsaw_all_", location: "/opt/" }
-    - { repo: "WithSecureLabs/chainsaw",  regex: "chainsaw_all_", location: "/opt/" }
-    - { repo: "WithSecureLabs/chainsaw",  regex: "chainsaw_all_", location: "/opt/" }
-    - { repo: "WithSecureLabs/chainsaw",  regex: "chainsaw_all_", location: "/opt/" }
-##
-    - { repo: "BloodHoundAD/BloodHound", regex: "BloodHound-linux-x64.zip", location: "/opt/" }
-    - { repo: "Pennyw0rth/NetExec", regex: "nxc, location: "/opt/" }
-    - { repo: "owasp-amass/amass", regex: "amass_Linux_amd64.zip, location: "/opt/" }
-    - { repo: "BloodHoundAD/AzureHound", regex: "azurehound-linux-amd64.zip, location: "/opt/cloud/azure/" }
+    - { repo: "initstring/cloud_enum",  regex: "cloud_enum-0.7.zip", location: "/opt/cloud/cloud_enum" }
+    - { repo: "dirkjanm/mitm6",  regex: "mitm6-0.3.0.zip", location: "/opt/mitm6" }
+    - { repo: "sensepost/gowitness",  regex: "gowitness-2.5.1-linux-amd64", location: "/opt/recon/gowitness" }
+    - { repo: "BloodHoundAD/BloodHound", regex: "BloodHound-linux-x64.zip", location: "/opt/bloodhound" }
+    - { repo: "Pennyw0rth/NetExec", regex: "nxc, location: "/opt/nxc" }
+    - { repo: "owasp-amass/amass", regex: "amass_Linux_amd64.zip, location: "/opt/recon/amass" }
+    - { repo: "BloodHoundAD/AzureHound", regex: "azurehound-linux-amd64.zip, location: "/opt/cloud/azure/azurehound" }
+    - { repo: "blechschmidt/massdns", regex: "massdns-1.1.0.zip, location: "/opt/recon/massdns" }
 
 
   async: 45
