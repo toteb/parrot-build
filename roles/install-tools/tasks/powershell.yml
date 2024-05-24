@@ -2,18 +2,13 @@
 - name: Install PowerShell on Debian-based systems
   hosts: all
   become: true
+  become_method: sudo
   tasks:
     - name: Update the list of packages
       apt:
         update_cache: yes
       tags: update
-    
-    - name: Install pre-requisite packages
-      apt:
-        name: wget
-        state: present
-      tags: install
-    
+  
     - name: Download the PowerShell package file
       get_url:
         url: https://github.com/PowerShell/PowerShell/releases/download/v7.4.2/powershell_7.4.2-1.deb_amd64.deb
