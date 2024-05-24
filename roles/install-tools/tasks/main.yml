@@ -1,5 +1,5 @@
 ---
-- include: powershell.yml
+- include: install-pwsh.yml
 - include: apt-stuff.yml
 - include: go-stuff.yml
 - include: github-repos.yml

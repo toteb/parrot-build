@@ -1,0 +1,10 @@
+---
+- name: Install PowerShell 7.4
+  hosts: your_hosts
+  become: true
+  become_method: sudo
+  tasks:
+    - name: Run PowerShell Deployment
+      script: powershell.sh
+      args:
+        executable: pwsh
