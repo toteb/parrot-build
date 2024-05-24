@@ -16,11 +16,10 @@
   become_method: sudo
 
 - name: Resolve missing dependencies and finish
-  apt:
-    update_cache: yes
-    name: -f
-    state: present
-
+  shell: apt-get install -f
+  become: true
+  become_method: sudo
+  
 - name: "Install PowerShell 7.4"
   shell: "rm /tmp/powershell_7.4.2-1.deb_amd64.deb"
   become: true
