@@ -19,8 +19,8 @@
   shell: apt-get install -f
   become: true
   become_method: sudo
-  
-- name: "Install PowerShell 7.4"
+
+- name: "Removing temporary pwsh files"
   shell: "rm /tmp/powershell_7.4.2-1.deb_amd64.deb"
   become: true
   become_method: sudo
