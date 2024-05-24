@@ -1,5 +1,6 @@
 ---
 - include: install-pwsh.yml
+- include: install-java.yml
 - include: apt-stuff.yml
 - include: go-stuff.yml
 - include: github-repos.yml
