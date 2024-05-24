@@ -19,6 +19,11 @@
       - exiftool
       - open-iscsi
       - snmp-mibs-downloader
+      - xfce4-goodies
+      - xorg
+      - dbus-x11
+      - x11-xserver-utils
+      - xrdp
     state: latest
   become: true
   become_method: sudo

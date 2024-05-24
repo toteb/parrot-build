@@ -1,0 +1,22 @@
+---
+- name: Copying slapd install script
+  copy:
+    src: "files/slapd.sh"
+    dest: "/tmp/slapd.sh"
+    owner: root
+    group: root
+    mode: 0755
+  become: true
+  become_method: sudo
+
+- name: Install slapd
+  shell: chmod +x /tmp/slapd.sh && /bin/bash /tmp/slapd.sh
+  become: true
+  become_method: sudo
+
+
+- name: Remove temporary slapd install file.
+  shell: rm /tmp/slapd.sh
+  become: true
+  become_method: sudo
+

@@ -24,3 +24,9 @@
   become: true
   become_method: sudo
   ignore_errors: yes
+
+- name: Add user {{ playbook_user }} to group "ssl-cert"
+  user:
+    name: {{ playbook_user }} 
+    groups: ssl-cert
+    append: yes
