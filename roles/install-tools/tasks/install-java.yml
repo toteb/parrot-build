@@ -39,6 +39,6 @@
   become_method: sudo
 
 - name: Reload java environment
-  shell: source /etc/environemnt
+  shell: source /etc/environment
   become: true
   become_method: sudo
