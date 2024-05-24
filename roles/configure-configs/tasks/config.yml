@@ -1,0 +1,39 @@
+---
+- name: Gather facts
+  ansible.builtin.setup:
+
+- name: Get the username of the user running the playbook
+  set_fact:
+    playbook_user: "{{ ansible_env.USER }}"
+
+- name: Detect the default shell
+  command: echo $SHELL
+  register: shell_path
+
+- name: Ensure ~/.bashrc includes the GOPATH
+  lineinfile:
+    path: "/home/{{ playbook_user }}/.bashrc"
+    line: 'export PATH=$PATH:/home/{{ playbook_user }}/go/bin'
+    create: yes
+    state: present
+  when: shell_path.stdout == "/bin/bash" or shell_path.stdout == "/usr/bin/bash"
+
+- name: Ensure ~/.zshrc includes the GOPATH
+  lineinfile:
+    path: "/home/{{ playbook_user }}/.zshrc"
+    line: 'export PATH=$PATH:/home/{{ playbook_user }}/go/bin'
+    create: yes
+    state: present
+  when: shell_path.stdout == "/bin/zsh" or shell_path.stdout == "/usr/bin/zsh"
+
+- name: Source ~/.bashrc if bash is the default shell
+  shell: source /home/{{ playbook_user }}/.bashrc
+  args:
+    executable: /bin/bash
+  when: shell_path.stdout == "/bin/bash" or shell_path.stdout == "/usr/bin/bash"
+
+- name: Source ~/.zshrc if zsh is the default shell
+  shell: source /home/{{ playbook_user }}/.zshrc
+  args:
+    executable: /bin/zsh
+  when: shell_path.stdout == "/bin/zsh" or shell_path.stdout == "/usr/bin/zsh"

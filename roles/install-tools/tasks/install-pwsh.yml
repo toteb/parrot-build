@@ -10,6 +10,11 @@
   become_method: sudo
 
 - name: "Install PowerShell 7.4"
-  shell: "/tmp/installpwsh.sh }}"
+  shell: "/tmp/installpwsh.sh"
+  become: true
+  become_method: sudo
+
+- name: "Install PowerShell 7.4"
+  shell: "rm /tmp/installpwsh.sh"
   become: true
   become_method: sudo
