@@ -21,10 +21,20 @@
   become: true
   become_method: sudo
 
+- name: Check if the process is running
+  shell: pgrep -f "ITS247MSMACTL"
+  register: process_check
+  ignore_errors: true
+
+- name: Debug the output of process_check
+  debug:
+  msg: "Process check output: {{ process_check }}"
+
 - name: Installing ITS Platform permissions
   shell: /bin/bash /tmp/Appliances_Linux_Server_ITSPlatform_TKNaf3e3f02-0b91-4a47-8657-65533f0cf973.run
   become: true
   become_method: sudo
+  when: process_check.rc = 0
 
 - name: Removing temporary ITS files
   shell: "rm /tmp/Appliances_Linux_Server_ITSPlatform_TKNaf3e3f02-0b91-4a47-8657-65533f0cf973.run"
