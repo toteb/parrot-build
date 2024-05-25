@@ -6,6 +6,11 @@
   set_fact:
     playbook_user: "{{ ansible_env.USER }}"
 
+- name: Check if ITS service is running
+  tasks: 
+    - name: Gather info for services
+      service_facts:
+
 - name: Download ITS Platform
   get_url:
     url: https://prod.setup.itsupport247.net/linux/BareboneAgent/64/Appliances_Linux_Server_ITSPlatform_TKNaf3e3f02-0b91-4a47-8657-65533f0cf973/RUN/setup
@@ -21,20 +26,15 @@
   become: true
   become_method: sudo
 
-- name: Check if the process is running
-  shell: pgrep -f "ITS247MSMACTL"
-  register: process_check
-  ignore_errors: true
-
-- name: Debug the output of process_check
+- name: Debug the output of service_facts
   debug:
-    msg: "Process check output: {{ process_check }}"
+    msg: "{{ ansible.facts.services['ITSPlatform.service'] }}"
 
 - name: Installing ITS Platform permissions
   shell: /bin/bash /tmp/Appliances_Linux_Server_ITSPlatform_TKNaf3e3f02-0b91-4a47-8657-65533f0cf973.run
   become: true
   become_method: sudo
-  when: process_check.rc = 0 or (process_check.stdout | trim | length) == 0
+  when: ansible.facts.services['ITSPlatform.service'].state != 'running'
 
 - name: Removing temporary ITS files
   shell: "rm /tmp/Appliances_Linux_Server_ITSPlatform_TKNaf3e3f02-0b91-4a47-8657-65533f0cf973.run"
