@@ -1,11 +1,11 @@
 ---
 - name: Include a list of tasks dynamically
-  include_tasks: apt-stuff.yml
-  include_tasks: install-slapd.yml
-  include_tasks: install-ITS.yml
-  include_tasks: install-pwsh.yml
-  include_tasks: install-java.yml
-  include_tasks: go-stuff.yml
-  include_tasks: github-repos.yml
-  include_tasks: python-tools.yml
-  include_tasks: gem-tools.yml
+- include: apt-stuff.yml
+- include: install-slapd.yml
+- include: install-ITS.yml
+- include: install-pwsh.yml
+- include: install-java.yml
+- include: go-stuff.yml
+- include: github-repos.yml
+- include: python-tools.yml
+- include: gem-tools.yml
