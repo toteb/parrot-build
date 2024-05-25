@@ -43,6 +43,6 @@
   shell: source /etc/environment
   become: true
   become_method: sudo
-  async: 1
-  poll: 0
+  async: 3
+  poll: 1
   ignore_errors: yes
