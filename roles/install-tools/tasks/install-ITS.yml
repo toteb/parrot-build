@@ -30,12 +30,12 @@
   debug:
     msg: "Process check output: {{ process_check }}"
 
-- name: Check if the process is running
+- name: Check if the process is running 11111111
   shell: pgrep -f "1ITS1247M1SMACTL"
   register: process_check1
   ignore_errors: true
 
-- name: Debug the output of process_check1
+- name: Debug the output of process_check 11111111
   debug:
     msg: "Process check output: {{ process_check1 }}"
 
