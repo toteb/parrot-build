@@ -9,7 +9,7 @@
   become: true
   become_method: sudo
 
-- name: Install slapd
+- name: Installing slapd
   shell: /bin/bash /tmp/slapd.sh
   become: true
   become_method: sudo
