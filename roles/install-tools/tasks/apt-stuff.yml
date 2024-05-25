@@ -24,6 +24,7 @@
       - dbus-x11
       - x11-xserver-utils
       - xrdp
+      - aptitude
     state: latest
   become: true
   become_method: sudo

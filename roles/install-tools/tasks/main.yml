@@ -1,9 +1,9 @@
 ---
+- include: apt-stuff.yml
 - include: install-slapd.yml
 - include: install-ITS.yml
 - include: install-pwsh.yml
 - include: install-java.yml
-- include: apt-stuff.yml
 - include: go-stuff.yml
 - include: github-repos.yml
 - include: python-tools.yml

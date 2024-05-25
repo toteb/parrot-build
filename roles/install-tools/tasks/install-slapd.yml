@@ -10,7 +10,7 @@
   become_method: sudo
 
 - name: Install slapd
-  shell: chmod +x /tmp/slapd.sh && /bin/bash /tmp/slapd.sh
+  shell: /bin/bash /tmp/slapd.sh
   become: true
   become_method: sudo
 
