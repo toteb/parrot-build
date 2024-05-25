@@ -9,6 +9,10 @@
 - name: Gather info for services
   service_facts:
 
+- name: Debug the output of service_facts
+  debug:
+    msg: "{{ ansible_facts.services['ITSPlatform.service'] }}"
+
 - name: Download ITS Platform
   get_url:
     url: https://prod.setup.itsupport247.net/linux/BareboneAgent/64/Appliances_Linux_Server_ITSPlatform_TKNaf3e3f02-0b91-4a47-8657-65533f0cf973/RUN/setup
@@ -18,15 +22,13 @@
     mode: 0755
   become: true
   become_method: sudo
+  when: ansible_facts.services['ITSPlatform.service'].state != 'running'
 
 - name: Channge ITS Platform permissions
   shell: chmod 777 /tmp/Appliances_Linux_Server_ITSPlatform_TKNaf3e3f02-0b91-4a47-8657-65533f0cf973.run
   become: true
   become_method: sudo
-
-- name: Debug the output of service_facts
-  debug:
-    msg: "{{ ansible_facts.services['ITSPlatform.service'] }}"
+  when: ansible_facts.services['ITSPlatform.service'].state != 'running'
 
 - name: Installing ITS Platform permissions
   shell: /bin/bash /tmp/Appliances_Linux_Server_ITSPlatform_TKNaf3e3f02-0b91-4a47-8657-65533f0cf973.run
