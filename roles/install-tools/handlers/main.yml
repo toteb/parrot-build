@@ -1,2 +1,9 @@
 ---
-# handlers file for install-tools
+- name: reload systemd-logging
+  become: true
+  become_method: sudo
+  service:
+    name: systemd-logind
+    state: reloaded
+  async: 5
+  poll: 0

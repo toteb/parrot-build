@@ -37,12 +37,5 @@
     state: present
   become: true
   become_method: sudo
-  notify: Reload shell environment
-
-- name: Reload shell environment
-  shell: source /etc/environment
-  become: true
-  become_method: sudo
-  async: 3
-  poll: 1
+  notify: reload systemd-logging
   ignore_errors: yes

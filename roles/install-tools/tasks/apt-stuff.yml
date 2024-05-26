@@ -25,7 +25,6 @@
       - x11-xserver-utils
       - xrdp
       - aptitude
-      - libcurl3
     state: latest
   become: true
   become_method: sudo

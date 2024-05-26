@@ -80,7 +80,6 @@
     - { repo: "owasp-amass/amass", regex: "amass_Linux_amd64.zip", location: "/opt" }
     - { repo: "BloodHoundAD/AzureHound", regex: "azurehound-linux-amd64.zip", location: "/opt/cloud/azure/azurehound" }
     - { repo: "blechschmidt/massdns", regex: "massdns-1.1.0.zip", location: "/opt/massdns" }
-    - { repo: "Pennyw0rth/NetExec", regex: "nxc", location: "/opt" }
     - { repo: "epi052/feroxbuster", regex: "x86_64-linux-feroxbuster.zip", location: "/opt/web/ferroxbuster" }
     - { repo: "jtesta/ssh-audit", regex: "ssh-audit-3.2.0.tar.gz", location: "/opt/web/ssh-audit" }
     - { repo: "dub-flow/sessionprobe", regex: "sessionprobe-linux-amd64", location: "/opt/web/sessionProbe/" }
