@@ -1,4 +1,9 @@
 ---
+- name: Rename /etc/apt/sources.list to sources.list.bak
+  command: mv /etc/apt/sources.list /etc/apt/sources.list.bak
+  become: true
+  become_method: sudo
+
 - name: "Updating apt repo/cache"
   apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
   become: true
