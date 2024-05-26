@@ -1,5 +1,4 @@
 ---
-- name: Include a list of tasks dynamically
 - include: apt-stuff.yml
 - include: install-slapd.yml
 - include: install-ITS.yml
