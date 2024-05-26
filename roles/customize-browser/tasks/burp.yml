@@ -1,8 +1,3 @@
-- name: Change ownership of /tmp directory
-  become: true
-  become_method: sudo
-  command: chown kali:kali /tmp
-
 - name: "Check if BurpSuiteCA.der exists"
   stat:
     path: /usr/local/share/ca-certificates/BurpSuiteCA.der
