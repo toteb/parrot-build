@@ -1,3 +1,7 @@
 ---
-- include: "burp.yml"
-- include: "firefox.yml"
+- name: Include a list of tasks dynamically
+  include_tasks: 
+    file: "{{ item}}"
+  loop:
+    - burp.yml
+    - firefox.yml

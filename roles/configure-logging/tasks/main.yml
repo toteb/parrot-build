@@ -1,3 +1,7 @@
 ---
-- include: "ufw.yml"
-- include: "auditd.yml"
+- name: Include a list of tasks dynamically
+  include_tasks:
+    file: "{{ item }}"
+  loop:
+    - ufw.yml
+    - auditd.yml

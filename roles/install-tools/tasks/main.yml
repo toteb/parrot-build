@@ -1,10 +1,13 @@
 ---
-- include: apt-stuff.yml
-- include: install-slapd.yml
-#- include: install-ITS.yml
-- include: install-pwsh.yml
-- include: install-java.yml
-- include: go-stuff.yml
-- include: github-repos.yml
-- include: python-tools.yml
-- include: gem-tools.yml
+- name: Include a list of tasks dynamically
+  include_tasks: 
+    file: "{{ item }}"
+  loop:
+    - apt-stuff.yml
+    - install-slapd.yml
+    - install-pwsh.yml
+    - install-java.yml
+    - go-stuff.yml
+    - github-repos.yml
+    - python-tools.yml
+    - gem-tools.yml

@@ -1,2 +1,3 @@
 ---
-- include: "configure-sudoers.yml"
+- name: Include a list of tasks dynamically
+  include_tasks: "configure-sudoers.yml"
