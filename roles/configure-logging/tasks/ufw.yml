@@ -5,6 +5,7 @@
   apt:
     name: rsyslog
     state: present
+  no_log: true
 
 - name: "Enable rsyslog service"
   service:
