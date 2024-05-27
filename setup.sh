@@ -1,5 +1,11 @@
 #!/bin/bash
+
+# request sudo before everything else
+sudo -v
 user=$(whoami)
+# Get rid of EXTERNALLY-MANAGED Environment file.
+if [ -f /usr/lib/python3.11/EXTERNALLY-MANAGED ]; then sudo mv /usr/lib/python3.11/EXTERNALLY-MANAGED /usr/lib/python3.11/EXTERNALLY-MANAGED.old; fi
+
 # 1. Install Ansible
 if command -v ansible >/dev/null 2>&1; then
   echo "Ansible is already installed."
