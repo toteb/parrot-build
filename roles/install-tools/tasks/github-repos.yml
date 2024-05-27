@@ -100,6 +100,13 @@
   become: true
   become_method: sudo
 
+- name: Adjust permissions of /opt
+  shell: chown -R $(whoami):$(id -gn) /opt/
+  become: true
+  become_method: sudo
+  no_log: true
+  ignore_errors: true
+
 - name: Remove temporary build files
   ansible.builtin.file:
     path: "{{ build_dir.path }}"
