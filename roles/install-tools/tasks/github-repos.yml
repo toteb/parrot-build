@@ -1,9 +1,9 @@
 ---
-- name: "Installing useful github repos"
-  git:
-    repo: "{{ item.repo }}"
-    dest: "{{ item.location }}"
-  loop:
+- name: "Check if directories for github repos exist"
+  stat:
+    path: "{{ item.location }}"
+  register: repo_dir_stat
+  with_items:
     # SecLists
     - { repo: "https://github.com/danielmiessler/SecLists", location: "/opt/SecLists" }
     # cloud tools
@@ -47,6 +47,15 @@
     - { repo: "https://github.com/projectdiscovery/nuclei-templates", location: "/opt/web/nuclei-templates" }
     - { repo: "https://github.com/EnableSecurity/wafw00f", location: "/opt/web/wafw00f" }
     - { repo: "https://github.com/s0md3v/XSStrike", location: "/opt/web/xsStrike" }
+  bregister: repo_dirs
+  no_log: true
+
+- name: "Installing github repos"
+  git:
+    repo: "{{ item.item.repo }}"
+    dest: "{{ item.item.location }}"
+  loop: "{{ repo_dirs.results }}"
+  when: not item.stat.exists
   become: true
   become_method: sudo
 
