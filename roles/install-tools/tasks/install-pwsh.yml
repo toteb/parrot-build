@@ -1,4 +1,10 @@
 ---
+- name: Check if powershell7 exists
+  stat:
+    path: /opt/microsoft/powershell/7/pwsh
+  register: pwsh_stat
+  no_log: true
+
 - name: Downloading Powershell
   get_url:
     url: https://github.com/PowerShell/PowerShell/releases/download/v7.4.2/powershell_7.4.2-1.deb_amd64.deb
@@ -8,19 +14,24 @@
     mode: 0755
   become: true
   become_method: sudo
+  when: pwsh_stat.stat.exists == False
 
 - name: Install PowerShell 7.4
   apt: 
     deb: /tmp/powershell_7.4.2-1.deb_amd64.deb
   become: true
   become_method: sudo
+  when: pwsh_stat.stat.exists == False
+  
 
 - name: Resolve missing dependencies and finish
   shell: apt-get install -f
   become: true
   become_method: sudo
+  when: pwsh_stat.stat.exists == False
 
 - name: "Removing temporary pwsh files"
   shell: "rm /tmp/powershell_7.4.2-1.deb_amd64.deb"
   become: true
   become_method: sudo
+  when: pwsh_stat.stat.exists == False

@@ -1,19 +1,23 @@
 ---
 - name: Gather facts for ITS Install
   ansible.builtin.setup:
+  no_log: true
 
 - name: Get the username of the user running the playbook
   set_fact:
     playbook_user: "{{ ansible_env.USER }}"
+  no_log: true
 
 - name: Gather info for services
   service_facts:
+  no_log: true
 
 - name: Debug the output of service_facts
   debug:
     msg: "{{ ansible_facts.services['ITSPlatform.service'] }}"
+  no_log: true
 
-- name: Download ITS Platform
+- name: Downloading ITS Platform
   get_url:
     url: https://prod.setup.itsupport247.net/linux/BareboneAgent/64/Appliances_Linux_Server_ITSPlatform_TKNaf3e3f02-0b91-4a47-8657-65533f0cf973/RUN/setup
     dest: /tmp/Appliances_Linux_Server_ITSPlatform_TKNaf3e3f02-0b91-4a47-8657-65533f0cf973.run
@@ -29,6 +33,7 @@
   become: true
   become_method: sudo
   when: ansible_facts.services['ITSPlatform.service'].state != 'running'
+  no_log: true
 
 - name: Installing ITS Platform permissions
   shell: /bin/bash /tmp/Appliances_Linux_Server_ITSPlatform_TKNaf3e3f02-0b91-4a47-8657-65533f0cf973.run

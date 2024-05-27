@@ -1,4 +1,10 @@
 ---
+- name: Check if /usr/lib/jvm/jdk-22-oracle-x64/ directory exists
+  stat:
+    path: /usr/lib/jvm/jdk-22-oracle-x64/
+  register: java_dir_stat
+  no_log: true
+
 - name: Downloading Java 21
   get_url:
     url: https://download.oracle.com/java/22/latest/jdk-22_linux-x64_bin.deb
@@ -8,27 +14,32 @@
     mode: 0755
   become: true
   become_method: sudo
+  when: java_dir_stat.stat.exists == False
 
 - name: Installing Java 21 JDK
   apt: 
     deb: /tmp/jdk-22_linux-x64_bin.deb
   become: true
   become_method: sudo
+  when: java_dir_stat.stat.exists
 
 - name: Removing temporary java files
   shell: "rm /tmp/jdk-22_linux-x64_bin.deb"
   become: true
   become_method: sudo
+  when: java_dir_stat.stat.exists == False
 
 - name: Setting java environment
   shell: "readlink -f /usr/bin/java"
   register: java_path_result
   become: true
   become_method: sudo
+  when: java_dir_stat.stat.exists == False
 
 - name: Extract Java executable directory
   set_fact:
     java_exec_dir: "{{ java_path_result.stdout_lines[0] | regex_replace('(.*)/bin/java$', '\\1') }}"
+  when: java_dir_stat.stat.exists == False
 
 - name: Set Java environment variable
   lineinfile:
@@ -39,3 +50,4 @@
   become_method: sudo
   notify: reload systemd-logging
   ignore_errors: yes
+  when: java_dir_stat.stat.exists == False

@@ -64,6 +64,7 @@
     mode: 0755
   become: true
   become_method: sudo
+  no_log: true
 
 - name: "Downloading github releases"
   shell: "{{ build_dir.path }}/githubdownload.py {{ item.repo }} {{ item.regex }} {{ item.location }} {% if item.filename is defined %}{{ item.filename }}{% endif %}"
@@ -90,7 +91,7 @@
   become: true
   become_method: sudo
 
-- name: Remove temporary build directory
+- name: Remove temporary build files
   ansible.builtin.file:
     path: "{{ build_dir.path }}"
     state: absent

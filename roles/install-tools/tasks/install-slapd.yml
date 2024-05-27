@@ -1,4 +1,10 @@
 ---
+- name: Check if slapd exists
+  stat:
+    path: /etc/init.d/slapd
+  register: slapd_stat
+  no_log: true
+
 - name: Copying slapd install script
   copy:
     src: "files/slapd.sh"
@@ -8,15 +14,17 @@
     mode: 0755
   become: true
   become_method: sudo
+  when: slapd_stat.stat.exists == False
 
 - name: Installing slapd
   shell: /bin/bash /tmp/slapd.sh
   become: true
   become_method: sudo
-
+  when: slapd_stat.stat.exists == False
 
 - name: Remove temporary slapd install file.
   shell: rm /tmp/slapd.sh
   become: true
   become_method: sudo
+  when: slapd_stat.stat.exists == False
 
