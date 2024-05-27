@@ -21,7 +21,7 @@
     deb: /tmp/jdk-22_linux-x64_bin.deb
   become: true
   become_method: sudo
-  when: java_dir_stat.stat.exists
+  when: java_dir_stat.stat.exists == False
 
 - name: Removing temporary java files
   shell: "rm /tmp/jdk-22_linux-x64_bin.deb"
