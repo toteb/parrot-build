@@ -1,7 +1,12 @@
 #!/bin/bash
 user=$(whoami)
 # 1. Install Ansible
-python3 -m pip install ansible
+if command -v ansible >/dev/null 2>&1; then
+  echo "Ansible is already installed."
+else
+  echo "Ansible is not installed. Installing Ansible..."
+  python3 -m pip install ansible
+fi
 # 2. Add Ansible to PATH
 export PATH=$PATH:/home/$user/.local/bin
 # 3. Download kali-built repository to a specified folder
