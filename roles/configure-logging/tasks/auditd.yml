@@ -31,7 +31,7 @@
     home: /var/log/laurel
   become: true
   become_method: sudo
-  when: laurel_stat.stat.location.exists == False
+  when: laurel_stat.stat.exists == False
 
 - name: "Create directories for _laurel /var/log/laurel"
   file:
@@ -48,7 +48,7 @@
   become_method: sudo
   async: 15
   poll: 0
-  when: laurel_stat.stat.location.exists == False
+  when: laurel_stat.stat.exists == False
 
 - name: "Copy laurel/config.toml to /etc/laurel/config.toml"
   copy:
@@ -59,7 +59,7 @@
     mode: 0640
   become: true
   become_method: sudo
-  when: laurel_stat.stat.location.exists == False
+  when: laurel_stat.stat.exists == False
 
 - name: "Copy laurel/laurel.conf to /etc/audit/plugins.d"
   copy:
@@ -70,7 +70,7 @@
     mode: 0640
   become: true
   become_method: sudo
-  when: laurel_stat.stat.location.exists == False
+  when: laurel_stat.stat.exists == False
 
 - name: "Downloading https://github.com/threathunters-io/laurel/releases/download/v0.5.2/laurel-v0.5.2-x86_64-glibc.tar.gz"
   get_url:
@@ -87,7 +87,7 @@
     mode: 0755
   become: true
   become_method: sudo
-  when: laurel_stat.stat.location.exists == False
+  when: laurel_stat.stat.exists == False
 
 - name: "Running install -m755 laurel /usr/local/sbin/laurel"
   command: "install -m755 laurel /usr/local/sbin/laurel"
@@ -95,7 +95,7 @@
     chdir: /tmp/laurel/
   become: true
   become_method: sudo
-  when: laurel_stat.stat.location.exists == False
+  when: laurel_stat.stat.exists == False
   
 - name: "Restart auditd"
   service:
