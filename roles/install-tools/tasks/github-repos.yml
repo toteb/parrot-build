@@ -55,7 +55,7 @@
     repo: "{{ item.item.repo }}"
     dest: "{{ item.item.location }}"
   loop: "{{ repo_dirs.results }}"
-  when: not item.stat.exists
+  when: not item.stat.location.exists
   become: true
   become_method: sudo
 
