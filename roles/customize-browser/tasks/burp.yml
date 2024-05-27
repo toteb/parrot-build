@@ -14,7 +14,7 @@
     content: |
       #!/usr/bin/expect -f
       set timeout 30
-      spawn /usr/lib/jvm/jdk-22-oracle-x64/bin/java -Djava.awt.headless=true -jar /usr/share/burpsuite/burpsuite.jar
+      spawn /usr/lib/jvm/jdk-22-oracle-x64/bin/java -Djava.awt.headless=true -jar /usr/share/burpsuite/burpsuite_community.jar
       expect "terms and conditions" {
           send "y\r"
       }
