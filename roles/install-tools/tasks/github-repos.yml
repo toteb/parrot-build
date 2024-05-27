@@ -47,7 +47,7 @@
     - { repo: "https://github.com/projectdiscovery/nuclei-templates", location: "/opt/web/nuclei-templates" }
     - { repo: "https://github.com/EnableSecurity/wafw00f", location: "/opt/web/wafw00f" }
     - { repo: "https://github.com/s0md3v/XSStrike", location: "/opt/web/xsStrike" }
-  bregister: repo_dirs
+  register: repo_dirs
   no_log: true
 
 - name: "Installing github repos"
